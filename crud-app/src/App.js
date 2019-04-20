@@ -1,15 +1,24 @@
 import React, { Component } from 'react';
+import GetAllEmployee from './components/GetAllEmployee';
+import './App.css';
+
 
 
 
 class App extends Component {
-  render() {
+  render(){
     return (
-      <div className="App">
-      <h1>Title</h1>
+
+      <div className = 'App'>
+       <GetAllEmployee />
+  
       </div>
+    
     );
   }
-}
 
+
+  
+}
+  
 export default App;
