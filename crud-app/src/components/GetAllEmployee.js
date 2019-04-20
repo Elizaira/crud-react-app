@@ -29,13 +29,24 @@ class AllEmployee extends Component {
       return (
        <div className="container">
         <table>
+          <tbody>
+          <tr>
+              <th>Employee Name</th>
+              <th>Employee Salary</th>
+              <th>Age</th>
+            </tr>
+
           {this.state.employees.map(employees => (
+
             <tr key={employees.id}>
+            
               <td>{employees.employee_name}</td>
               <td>{employees.employee_salary}</td>
               <td>{employees.employee_age}</td>
             </tr>
           ))}
+          
+          </tbody>
         </table>
        </div>
       );
