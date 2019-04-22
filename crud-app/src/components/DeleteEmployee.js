@@ -6,19 +6,20 @@ import axios from 'axios';
 class DeleteEmployee extends Component {
   constructor(props) {
     super(props);
-    this.state = { employees: [] };
+    this.onDelete = this.onDelete.bind(this);
   }
 
+  onDelete() {
+    const {onDelete, employees} = this.props;
+    onDelete(this.props.employees) 
+  }
  
 
   DeleteEmployee(id) {
-  
+    
     try {
-      axios({
-        method: 'delete',
-        url: `http://dummy.restapiexample.com/api/v1/delete/${id}`
-      
-      }).then(response => {
+      axios.delete('http://dummy.restapiexample.com/api/v1/delete/{this.state.id}')
+      .then(response => {
         console.log('Deleting Employee')
         console.log(response.data);
 
@@ -30,33 +31,33 @@ class DeleteEmployee extends Component {
   }
 
   render() {
-    const{employee_name, employee_age, employee_salary} = this.props;
+    const{employee_name, onDelete, employee_age, employee_salary} = this.props;
     
       return (
        <div className="container">
-        {/* <table>
+        <table>
           <tbody>
 
           
             <tr>
-              <td>{employees.employee_name}</td>
-              <td>{employees.employee_age}</td>
-              <td>{employees.employee_salary}</td>
+              <td>{employee_name}</td>
+              <td>{employee_age}</td>
+              <td>{employee_salary}</td>
               <td>
-                <button>Delete</button>
+                <button onClick={this.onDelete}>Delete</button>
               </td>
             </tr>
 
           </tbody>
-        </table> */}
+        </table>
 
 
 
 
 
-        <button onClick={() =>{
+        {/* <button onClick={() =>{
           this.DeleteEmployee('1342');
-        } }></button>
+        } }></button> */}
        </div>
       );
   }
