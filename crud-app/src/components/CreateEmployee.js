@@ -6,7 +6,7 @@ import axios from 'axios';
 class CreateEmployee extends Component {
     constructor(props) {
         super(props);
-
+        this.state = { employees: [] };
         this.onSubmit = this.onSubmit.bind(this);
     }
     
@@ -42,9 +42,9 @@ class CreateEmployee extends Component {
         return (
         <form onSubmit={this.onSubmit}>
              <div className="container">
-            <input placeholder="Name" className="input-box" ref={nameInput => this.nameInput = nameInput} />
-            <input placeholder="Age" className="input-box"ref={ageInput => this.ageInput = ageInput} />
-            <input placeholder="Salary" className="input-box" ref={salaryInput => this.salaryInput = salaryInput} />
+            <input type="text" placeholder="Name" className="input-box" ref={nameInput => this.nameInput = nameInput} />
+            <input type="number" placeholder="Age" className="input-box"ref={ageInput => this.ageInput = ageInput} />
+            <input type="number" placeholder="Salary" className="input-box" ref={salaryInput => this.salaryInput = salaryInput} />
            
            
             <button className="btn-add" id="btn-add">
