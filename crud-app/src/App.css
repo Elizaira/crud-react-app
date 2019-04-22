@@ -86,6 +86,9 @@ only screen and (max-width: 760px),
     #table-content{
         width:100%;
     }
+    .modal-content{
+        width:100%;
+    }
     .btn-delete{
         padding:2px;
     }
